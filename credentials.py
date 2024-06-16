@@ -2,7 +2,7 @@ import os
 import gspread
 from gspread_dataframe import get_as_dataframe, set_with_dataframe
 
-GOOGLE_APP_CREDENTIALS = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', "credentials.json")
+GOOGLE_APP_CREDENTIALS = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 DOC_ID = "1kUY8Suw4jS2MhtNRQcHhogf04WdV7ubMpHwnaCPlir0"
 gc = gspread.service_account(filename=GOOGLE_APP_CREDENTIALS)
 
