@@ -1,6 +1,8 @@
 import os
 import gspread
 from gspread_dataframe import get_as_dataframe, set_with_dataframe
+import streamlit as st
+
 
 # GOOGLE_APPLICATION_CREDENTIALS = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', "credentials.json")
 GOOGLE_APPLICATION_CREDENTIALS = st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]
