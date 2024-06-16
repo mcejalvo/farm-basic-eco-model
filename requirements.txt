@@ -4,3 +4,4 @@ streamlit
 google-auth
 gspread
 gspread_dataframe
+oauth2client

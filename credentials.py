@@ -3,7 +3,6 @@ from gspread_dataframe import get_as_dataframe
 import streamlit as st
 from oauth2client.service_account import ServiceAccountCredentials
 
-# Use credentials from Streamlit secrets
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["GOOGLE_APPLICATION_CREDENTIALS"])
 gc = gspread.authorize(credentials)
 
