@@ -1,9 +1,15 @@
 import altair as alt
 import numpy as np
-import pandas as pd
-import streamlit as st
-from credentials import *
+from model import * 
 
+# Loading parameters
+
+if 'simulation_parameters' not in st.session_state:
+    st.session_state['simulation_parameters'] = params
+
+if st.sidebar.button("Reload Data"):
+    st.session_state['simulation_parameters'] = load_simulation_parameters()
+    params = st.session_state['simulation_parameters']
 
 
 """
@@ -16,4 +22,13 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-st.dataframe(df.style.highlight_max(axis=0))
+st.dataframe(params["df_products"])
+st.write(params["recipes_dict"]["cookie"])
+cookie = params["recipes_dict"]["cookie"]
+
+st.write(params["products_lists"])
+
+
+# for ingredient, quantity in cookie.items():
+#     st.write(ingredient, quantity)
+
