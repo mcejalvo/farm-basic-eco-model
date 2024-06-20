@@ -13,22 +13,15 @@ if st.sidebar.button("Reload Data"):
 
 
 """
-# Welcome to Streamlit! ! 
-
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:.
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+# Farm Resource Manager Toy Model
+## Economy Simulation 
 """
 
 st.dataframe(params["df_products"])
 st.write(params["recipes_dict"]["cookie"])
 cookie = params["recipes_dict"]["cookie"]
 
-st.write(params["products_lists"])
 
-
-# for ingredient, quantity in cookie.items():
-#     st.write(ingredient, quantity)
+for ingredient, quantity in cookie.items():
+    st.write(ingredient, quantity)
 

@@ -32,10 +32,6 @@ class Player:
 
         return self.orders
 
-    def compute_product_cost(product):
-
-
-
     def pick_and_complete_order(self):
         # Let's simulate a player taking random tasks, not aware of inventory
         self.refill_orders()
