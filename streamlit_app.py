@@ -13,15 +13,24 @@ if st.sidebar.button("Reload Data"):
 
 
 """
-# Farm Resource Manager Toy Model
+# Farm Resource Manager Game
 ## Economy Simulation 
+
+### Products
 """
 
-st.dataframe(params["df_products"])
-st.write(params["recipes_dict"]["cookie"])
-cookie = params["recipes_dict"]["cookie"]
 
 
-for ingredient, quantity in cookie.items():
-    st.write(ingredient, quantity)
+selection = st.selectbox("Select product to check recipe", params["df_recipes"]["Name"])
 
+recipe = params["recipes_dict"][selection]
+
+st.dataframe(recipe)
+
+"""
+### Player Inventory
+"""
+
+st.write(f"Player has: ")
+df = pd.DataFrame.from_dict(player.inventory, orient="index", columns=["Amount"])
+st.dataframe(df[df.index.isin(recipe.keys())])

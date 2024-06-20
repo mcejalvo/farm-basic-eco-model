@@ -28,7 +28,7 @@ def load_simulation_parameters():
 
     recipes_dict = {}
 
-    df_recipes = df_products.query("Type != 'Crop'")
+    df_recipes = df_products[df_products["Type"] != "Crop"]
 
     for product in df_recipes["Name"]:
         df_product = df_recipes.query(f"Name == '{product}'")
